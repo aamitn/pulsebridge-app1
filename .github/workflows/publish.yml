@@ -9,7 +9,7 @@ env:
   ANDROID_KEY_ALIAS: key0
   ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
   ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-  ANDROID_KEYSTORE_PATH: ./pulsebridge.jks
+  ANDROID_KEYSTORE_PATH: pulsebridge.jks
 
 jobs:
   deploy:
