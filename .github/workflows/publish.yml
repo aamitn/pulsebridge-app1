@@ -1,4 +1,4 @@
-name: pulsebridge-app publish
+name: cht-gateway publish
 
 on:
   push:
@@ -6,10 +6,10 @@ on:
       - v*.*.*
 
 env:
-  ANDROID_KEY_ALIAS: key0
+  ANDROID_KEY_ALIAS: medicmobile
   ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
   ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-  ANDROID_KEYSTORE_PATH: ./pulsbridge.jks
+  ANDROID_KEYSTORE_PATH: ./medic-official.keystore
 
 jobs:
   deploy:
@@ -24,7 +24,8 @@ jobs:
       - uses: android-actions/setup-android@v2
       - run: yes | sdkmanager 'platforms;android-28'
       - name: Decrypt keystore
-        run: make assemble-release
+        run: openssl aes-256-cbc -K ${{ secrets.ANDROID_SECRETS_KEY }} -iv ${{ secrets.ANDROID_SECRETS_IV }} -in medic-official.keystore.enc -out medic-official.keystore -d
+      - run: make assemble-release
         env:
           GIT_TAG: ${{ github.ref_name }}
       - name: GitHub release

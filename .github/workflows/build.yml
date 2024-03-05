@@ -1,12 +1,12 @@
-name: pulsebridge-app build and test
+name: cht-gateway build and test
 
 on: [push, pull_request]
 
 env:
-  ANDROID_KEY_ALIAS: key0
+  ANDROID_KEY_ALIAS: medicmobile
   ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
   ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-  ANDROID_KEYSTORE_PATH: ./pulsbridge.jks
+  ANDROID_KEYSTORE_PATH: ./medic-official.keystore
 
 jobs:
   test:
@@ -18,7 +18,9 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
-        - name: AVD cache
+      - name: Decrypt keystore
+        run: openssl aes-256-cbc -K ${{ secrets.ANDROID_SECRETS_KEY }} -iv ${{ secrets.ANDROID_SECRETS_IV }} -in medic-official.keystore.enc -out medic-official.keystore -d
+      - name: AVD cache
         uses: actions/cache@v2
         id: avd-cache
         with:
@@ -36,10 +38,16 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: false
           script: echo "Generated AVD snapshot for caching."
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
       - name: Run unit tests
         run: make test
+      - name: Run instrumented tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 26
+          target: default
+          force-avd-creation: false
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: make test-ui
       - name: Archive results
         uses: actions/upload-artifact@v2
         with:
