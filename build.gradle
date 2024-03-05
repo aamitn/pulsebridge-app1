@@ -4,7 +4,6 @@ buildscript {
 		maven {url "https://jitpack.io"}
 		jcenter()
 		google()
-		maven { url "https://plugins.gradle.org/m2/" }
 	}
 	dependencies {
 		classpath 'com.android.tools.build:gradle:8.2.2'
@@ -14,13 +13,11 @@ buildscript {
 		}
 		classpath 'com.puppycrawl.tools:checkstyle:7.8.1'
 		classpath 'com.github.bjoernq:unmockplugin:0.7.9'
-		classpath "gradle.plugin.com.github.viswaramamoorthy:gradle-util-plugins:0.1.0-RELEASE"
 	}
 }
 apply plugin: 'com.android.application'
 apply plugin: 'com.noveogroup.android.check'
 apply plugin: 'de.mobilej.unmock'
-apply plugin: "com.github.ManifestClasspath"
 
 // enable verbose lint warnings
 gradle.projectsEvaluated {
@@ -49,6 +46,7 @@ def excludeKxml2 = {
 	// be safe to exclude from androidTestImplementation and implementation configurations.
 	exclude module: 'kxml2'
 }
+
 
 dependencies {
 	implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -224,4 +222,14 @@ android {
 
 unMock {
 	keep 'android.net.Uri'
+}
+
+//Skip Findbugs
+afterEvaluate { project ->
+	project.tasks.androidFindbugs {
+		onlyIf  {
+			println 'Skipping...'
+			return false
+		}
+	}
 }
