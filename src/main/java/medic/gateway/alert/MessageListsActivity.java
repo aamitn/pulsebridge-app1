@@ -157,7 +157,7 @@ public class MessageListsActivity extends TabActivity {
 	}
 
 	private Drawable baseIcon() {
-		return getResources().getDrawable(R.mipmap.icn_launcher).mutate();
+		return getResources().getDrawable(R.mipmap.ic_launcher).mutate();
 	}
 
 	private Drawable redIcon() {

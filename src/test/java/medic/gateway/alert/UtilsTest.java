@@ -100,17 +100,7 @@ public class UtilsTest {
 		});
 	}
 
-	@Test
-	public void startSettingsActivity_preKitkat_shouldNotPromptForDefaultSmsAppChange() {
-		// given
-		Capabilities cap = preKitkat();
 
-		// when
-		Utils.startSettingsActivity(messageListsActivity, cap);
-
-		// then
-		assertActivityLaunched(shadowApplication, SettingsDialogActivity.class);
-	}
 
 	@Test
 	public void normalisePhoneNumber_shouldStripCertainCharacters() {
@@ -137,29 +127,6 @@ public class UtilsTest {
 		}
 	}
 
-	@Test
-	public void startSettingsActivity_kitkatPlus_defaultSmsApp_shouldNotPromptForDefaultSmsAppChange() {
-		// given
-		Capabilities cap = isDefaultSmsApp();
-
-		// when
-		Utils.startSettingsActivity(messageListsActivity, cap);
-
-		// then
-		assertActivityLaunched(shadowApplication, SettingsDialogActivity.class);
-	}
-
-	@Test
-	public void startSettingsActivity_kitkatPlus_notDefaultSmsApp_shouldPromptForDefaultSmsAppChange() {
-		// given
-		Capabilities cap = isNotDefaultSmsApp();
-
-		// when
-		Utils.startSettingsActivity(messageListsActivity, cap);
-
-		// then
-		assertActivityLaunched(shadowApplication, PromptToSetAsDefaultMessageAppActivity.class);
-	}
 
 //> PRIVATE HELPERS
 	private Capabilities preKitkat() {

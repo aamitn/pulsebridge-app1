@@ -15,7 +15,6 @@
 			android:id="@+id/txtDefaultMessageAppWarning"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:autoText="false"
 			android:fontFamily="@font/red_hat_display"
 			android:text="@string/txtDefaultMessageAppWarning"
 			android:textSize="24sp" />
@@ -26,7 +25,6 @@
 			android:layout_height="271dp"
 			android:layout_gravity="bottom|clip_vertical|fill|fill_horizontal"
 			android:fontFamily="@font/red_hat_text"
-			android:password="false"
 			android:text="@string/txtDefaultMessageAppPrompt"
 			android:textStyle="normal" />
 

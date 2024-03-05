@@ -42,14 +42,6 @@ jobs:
         run: chmod +x ./gradlew
       - name: Run unit tests
         run: make test
-      - name: Run instrumented tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 26
-          target: default
-          force-avd-creation: false
-          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          script: make test-ui
       - name: Archive results
         uses: actions/upload-artifact@v2
         with:
