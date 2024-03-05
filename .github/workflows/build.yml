@@ -38,6 +38,15 @@ jobs:
           script: echo "Generated AVD snapshot for caching."
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+      - name: Run unit tests
+        run: make test
+      - name: Archive results
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test report
+          path: |
+            build/reports/
+        if: ${{ failure() }}
 
   build:
     name: Build
@@ -51,5 +60,5 @@ jobs:
       - uses: android-actions/setup-android@v2
       - run: yes | sdkmanager 'platforms;android-28'
       - name: Decrypt keystore
-       # run: openssl aes-256-cbc -K ${{ secrets.ANDROID_SECRETS_KEY }} -iv ${{ secrets.ANDROID_SECRETS_IV }} -in medic-official.keystore.enc -out medic-official.keystore -d
+        run: openssl aes-256-cbc -K ${{ secrets.ANDROID_SECRETS_KEY }} -iv ${{ secrets.ANDROID_SECRETS_IV }} -in medic-official.keystore.enc -out medic-official.keystore -d
       - run: make assemble-release
