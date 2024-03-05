@@ -19,8 +19,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v2
         with:
-          distribution: 'adopt'
-          java-version: '11'
+          distribution: 'temurin'
+          java-version: '17'
       - uses: android-actions/setup-android@v2
       - run: yes | sdkmanager 'platforms;android-28'
       # - name: Decrypt keystore
