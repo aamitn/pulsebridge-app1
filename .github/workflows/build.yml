@@ -3,7 +3,7 @@ name: cht-gateway build and test
 on: [push, pull_request]
 
 env:
-  ANDROID_KEY_ALIAS: medicmobile
+  ANDROID_KEY_ALIAS: key0
   ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
   ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
   ANDROID_KEYSTORE_PATH: ./pulsebridge.jks
