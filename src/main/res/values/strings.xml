@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="app_name">PulseBridge</string>
+
+	<string name="txtWebappUrl">PulseBridge Server URL</string>
+	<string name="errWebappUrl_serverNotFound">unable to contact PulseBridge server</string>
+	<string name="errWebappUrl_unauthorised">authorisation failed</string>
+	<string name="errWebappUrl_appNotFound">PulseBridge server is not responding in expected way</string>
+	<string name="errWebappUrl_badJson">unexpected response content</string>
+	<string name="errWebappUrl_badSsl">SSL connection failed</string>
+
+	<string name="txtWebappInstanceName">Instance name</string>
+	<string name="txtWebappPassword"/>
+	<string name="errPassword_illegalChar"/>
+	<string name="txtSavingSettings"/>
+	<string name="txtValidatingWebappUrl">Validating %s…</string>
+
+	<string name="spnWebappSubdomain"/>
+	<string-array name="spnWebappSubdomain" tools:ignore="InconsistentArrays"/>
+
+	<string name="cbxEnablePolling">Enable Polling</string>
+
+	<string name="cbxEnableCdmaCompatMode">CDMA Compatibility Mode</string>
+	<string name="cbxEnableDummySendMode">Dummy send mode</string>
+
+	<string name="errRequired">required</string>
+
+	<!-- generic settings page errors -->
+	<string name="errInvalidUrl">must be a valid URL</string>
+
+	<!-- medic settings page errors -->
+	<string name="errInvalidInstanceName">must be a valid instance name</string>
+
+	<string name="btnComposer_send">Send</string>
+	<string name="txtComposer_content">Message</string>
+	<string name="txtComposer_recipients">To</string>
+	<plurals name="txtComposer_sentConfirmation">
+		<item quantity="one">Message scheduled for 1 recipient</item>
+		<item quantity="other">Message scheduled for %d recipients</item>
+	</plurals>
+	<string name="errComposer_noRecipients">You must add at least one recipient</string>
+
+	<string name="btnOk">OK</string>
+	<string name="btnSave">Save</string>
+	<string name="btnCancel">Cancel</string>
+	<string name="btnContinue">Continue</string>
+	<string name="btnQuit">Quit</string>
+	<string name="btnRefresh">Refresh</string>
+
+	<string name="mnuCompose">New Message</string>
+	<string name="mnuSettings">Settings</string>
+	<string name="mnuMessageStats">Message Statistics</string>
+
+	<string name="lblMessageStats_title">Message Stats</string>
+	<string name="lblMessageStats_wo_total">- Webapp originating: %d</string>
+	<string name="lblMessageStats_wt_total">- Webapp terminating: %d</string>
+	<string name="lblMessageStats_forStatus">--- %1$s: %2$d</string>
+
+	<string name="mnuDeleteOldData">Clear old data</string>
+	<string name="txtConfirmDeleteOldData_title">Clear old data</string>
+	<string name="txtConfirmDeleteOldData_body">Are you sure you want to delete data more than one week old?
+		\n
+		\nWarning: pending messages <b>will</b> be deleted.</string>
+	<string name="btnConfirmDeleteOldData_confirm">Delete data</string>
+	<string name="txtDeleteOldData_inProgress">Deleting old data…</string>
+	<plurals name="txtOldDataDeleteCount">
+		<item quantity="one">Deleted 1 record.</item>
+		<item quantity="other">Deleted %,d records.</item>
+	</plurals>
+
+	<string name="txtEmptyListPrompt">(press Refresh to load content)</string>
+	<string name="btnRefreshList">Refresh all</string>
+	<string name="btnRetrySelected">Retry</string>
+	<string name="btnSelectNewer">Select newer</string>
+
+	<!-- Warning Message -->
+	<string name="txtDefaultMessageAppWarning">
+    <![CDATA[
+    <p style="font-size: 16px; color: #333;"><spa">---Warning---</span><br><br><b>%s</b> is not set as the default messaging app on this device.</p>
+    ]]>
+</string>
+
+	<!-- Prompt Message -->
+	<string name="txtDefaultMessageAppPrompt">
+    <![CDATA[
+    <p style="margin-top: 20px; font-size: 16px; color: #333;">To ensure optimal performance, please set this app as your default messaging app:</p>
+    <ul style="list-style-type: disc; margin-left: 20px;">
+        <li>The SMS inbox may fill up and prevent new messages from arriving.</li>
+    </ul>
+    <p style="margin-top: 20px; font-size: 16px; color: #333;">Alternatively, if you set <i>%s</i> as the default messaging app, you may experience:</p>
+    <ul style="list-style-type: disc; margin-left: 20px;">
+        <li>Inability to compose SMS through the normal Messages app.</li>
+        <li>Limited functionality for sending and receiving MMS (picture messages).</li>
+    </ul>
+    ]]>
+</string>
+	<string name="btnHelpMeSetDefaultMessagingApp">Set Default</string>
+	<string name="btnIDontCare">Ignore</string>
+
+	<string name="txtPermissionsPrompt_sms">
+		<![CDATA[
+		<b>Warning: <b>%1$s</b> does not currently have permissions to send and receive SMS.</b><br>
+		<br>The app may not perform as expected.
+		]]>
+	</string>
+
+	<string name="txtPermissionsPrompt_fileAccess">
+		<![CDATA[
+		<b>Warning: <b>%1$s</b> does not currently have permissions to read or write files.</b><br>
+		<br>This permission is required so that %1$s can recover unsaved messages after a crash or re-install.
+		]]>
+	</string>
+
+	<string name="txtDemandPermissions"/>
+
+	<string name="lblTo">To: %s</string>
+	<string name="lblFrom">From: %s</string>
+	<string name="lblStatusUpdates">Status history:</string>
+	<string name="lblContent">Content: %s</string>
+	<string name="lblSent">Sent: %s</string>
+	<string name="lblReceived">Received by PulseBridge gateway: %s</string>
+
+	<string name="btnRetry">Retry</string>
+
+	<string-array name="message_lists_tabs">
+		<item>Event Log</item>
+		<item>From Webapp</item>
+		<item>To Webapp</item>
+	</string-array>
+
+	<string name="txtProcessingExternalLog">Processing external message log…</string>
+</resources>

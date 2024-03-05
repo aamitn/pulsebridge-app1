@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:paddingLeft="16dp"
+		android:paddingRight="16dp"
+		android:orientation="vertical">
+
+	<EditText
+		android:id="@+id/txtComposer_recipients"
+		android:layout_width="fill_parent"
+		android:layout_height="71dp"
+		android:autofillHints=""
+		android:hint="@string/txtComposer_recipients"
+		android:inputType="textNoSuggestions"
+		android:lines="2" />
+	<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			>
+		<EditText android:id="@+id/txtComposer_content"
+				android:inputType="text"
+				android:autofillHints=""
+				android:hint="@string/txtComposer_content"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true"
+				android:layout_toLeftOf="@+id/btnComposer_send">
+			<requestFocus/>
+		</EditText>
+
+		<Button
+			android:id="@+id/btnComposer_send"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentBottom="true"
+			android:background="#3F51B5"
+			android:onClick="send"
+			android:paddingLeft="16dp"
+			android:paddingRight="16dp"
+			android:text="@string/btnComposer_send"
+			android:textColor="#FFFFFF" />
+	</RelativeLayout>
+</LinearLayout>

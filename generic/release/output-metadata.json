@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "medic.gateway.alert.generic",
+  "variantName": "genericRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 1,
+      "versionName": "SNAPSHOT",
+      "outputFile": "pulsebridge-app-SNAPSHOT-generic-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

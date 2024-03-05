@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:scrollbars="vertical"
+		android:fillViewport="true">
+	<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingLeft="16dp"
+			android:paddingRight="16dp"
+			android:orientation="vertical">
+		<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:orientation="horizontal">
+			<EditText android:id="@+id/txtWebappInstanceName"
+					android:inputType="text"
+					android:autofillHints=""
+					android:singleLine="true"
+					android:hint="@string/txtWebappInstanceName"
+					android:layout_weight="1"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"/>
+			<Spinner android:id="@+id/spnWebappSubdomain"
+					android:entries="@array/spnWebappSubdomain"
+					android:layout_weight="0"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="16dp"/>
+		</LinearLayout>
+		<EditText android:id="@+id/txtWebappPassword"
+				android:inputType="textPassword"
+				android:autofillHints=""
+				android:hint="@string/txtWebappPassword"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"/>
+		<CheckBox android:id="@+id/cbxEnablePolling"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="@string/cbxEnablePolling"
+				android:checked="true"/>
+		<CheckBox android:id="@+id/cbxEnableCdmaCompatMode"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="@string/cbxEnableCdmaCompatMode"
+				android:checked="false"/>
+		<RelativeLayout
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:orientation="vertical"
+				android:layout_marginTop="16dp">
+			<Button android:id="@+id/btnCancelSettings"
+					android:text="@string/btnCancel"
+					android:onClick="cancelSettingsEdit"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:paddingLeft="16dp"
+					android:paddingRight="16dp"
+					android:layout_alignParentBottom="true"
+					android:layout_toLeftOf="@+id/btnSaveSettings"/>
+			<Button android:id="@+id/btnSaveSettings"
+					android:text="@string/btnSave"
+					android:onClick="doSave"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:paddingLeft="16dp"
+					android:paddingRight="16dp"
+					android:layout_alignParentRight="true"
+					android:layout_alignParentBottom="true"/>
+		</RelativeLayout>
+	</LinearLayout>
+</ScrollView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:scrollbars="vertical"
+		android:fillViewport="true">
+	<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingLeft="16dp"
+			android:paddingRight="16dp"
+			android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="152dp"
+			android:orientation="horizontal"></LinearLayout>
+
+		<EditText
+			android:id="@+id/txtWebappUrl"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:autofillHints=""
+			android:gravity="center|start"
+			android:hint="@string/txtWebappUrl"
+			android:inputType="textUri" />
+
+		<CheckBox
+			android:id="@+id/cbxEnablePolling"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:checked="true"
+			android:text="@string/cbxEnablePolling"
+			android:textColorHighlight="#3F51B5"
+			android:textColorLink="#3F51B5" />
+		<CheckBox android:id="@+id/cbxEnableCdmaCompatMode"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="@string/cbxEnableCdmaCompatMode"
+				android:checked="false"/>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="478dp"
+			android:layout_marginTop="16dp"
+			android:orientation="vertical">
+
+			<Button
+				android:id="@+id/btnCancelSettings"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true"
+				android:layout_marginRight="63dp"
+				android:layout_marginBottom="340dp"
+				android:layout_toLeftOf="@+id/btnSaveSettings"
+				android:background="#F80505"
+				android:onClick="cancelSettingsEdit"
+				android:paddingLeft="16dp"
+				android:paddingRight="16dp"
+				android:text="@string/btnCancel"
+				android:textColor="#FFFFFF" />
+
+			<Button
+				android:id="@+id/btnSaveSettings"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_alignParentBottom="true"
+				android:layout_marginRight="74dp"
+				android:layout_marginBottom="341dp"
+				android:background="#3F51B5"
+				android:onClick="doSave"
+				android:paddingLeft="16dp"
+				android:paddingRight="16dp"
+				android:text="@string/btnSave"
+				android:textColor="#FFFFFF" />
+
+		</RelativeLayout>
+
+	</LinearLayout>
+</ScrollView>
