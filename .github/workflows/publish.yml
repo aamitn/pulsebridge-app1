@@ -23,9 +23,9 @@ jobs:
           java-version: '11'
       - uses: android-actions/setup-android@v2
       - run: yes | sdkmanager 'platforms;android-28'
-      - name: Compile
-        #run: openssl aes-256-cbc -K ${{ secrets.ANDROID_SECRETS_KEY }} -iv ${{ secrets.ANDROID_SECRETS_IV }} -in pulsebridge.jks -out pulsebridge.jks.keystore -d
-      - run: make assemble-release
+      - name: Decrypt keystore
+      # run: openssl aes-256-cbc -K ${{ secrets.ANDROID_SECRETS_KEY }} -iv ${{ secrets.ANDROID_SECRETS_IV }} -in pulsebridge.jks -out pulsebridge.jks.keystore -d
+        run: make assemble-release
         env:
           GIT_TAG: ${{ github.ref_name }}
       - name: GitHub release
