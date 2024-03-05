@@ -18,7 +18,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
-      - name: Decrypt keystore
+      - name: Decrypt keystores
         run: openssl aes-256-cbc -K ${{ secrets.ANDROID_SECRETS_KEY }} -iv ${{ secrets.ANDROID_SECRETS_IV }} -in pulsebridge.jks -out pulsebridge.jks.keystore -d
       - name: AVD cache
         uses: actions/cache@v2
