@@ -38,6 +38,8 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: false
           script: echo "Generated AVD snapshot for caching."
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Run unit tests
         run: make test
       - name: Archive results
