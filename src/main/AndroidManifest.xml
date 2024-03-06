@@ -4,9 +4,11 @@
   https://stackoverflow.com/questions/34074955/android-exact-alarm-is-always-3-minutes-off/34085645 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:tools="http://schemas.android.com/tools"
-		android:installLocation="internalOnly">
+		android:installLocation="internalOnly"
+    xmlns:dist="http://schemas.android.com/apk/distribution">
 	<!-- communication permissions -->
-	<uses-feature
+    <dist:module dist:instant="true" />
+    <uses-feature
 		android:name="android.hardware.telephony"
 		android:required="false" />
 

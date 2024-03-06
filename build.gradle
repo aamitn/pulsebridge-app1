@@ -153,6 +153,10 @@ android {
 			storePassword System.env.ANDROID_KEYSTORE_PASSWORD ?: signingConfigs.debug.storePassword
 			keyAlias System.env.ANDROID_KEY_ALIAS ?: signingConfigs.debug.keyAlias
 			keyPassword System.env.ANDROID_KEY_PASSWORD ?: signingConfigs.debug.keyPassword
+
+			// Optional, specify signing versions used
+		    v1SigningEnabled true
+		    v2SigningEnabled true
 		}
 	}
 
@@ -218,6 +222,9 @@ android {
 		}
 	}
 	namespace 'medic.gateway.alert'
+	buildFeatures {
+		buildConfig true
+	}
 }
 
 unMock {
