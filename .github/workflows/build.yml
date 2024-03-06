@@ -1,4 +1,4 @@
-name: cht-gateway build and test
+name: pulsebridge-app build and test
 
 on: [push, pull_request]
 

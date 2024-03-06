@@ -1,4 +1,4 @@
-name: cht-gateway publish
+name: pulsebridge-app publish
 
 on:
   push:
