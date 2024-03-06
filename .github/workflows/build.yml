@@ -63,7 +63,7 @@ jobs:
       - run: yes | sdkmanager 'platforms;android-28'
     #  - name: Decrypt keystore
    #     run: openssl aes-256-cbc -K ${{ secrets.ANDROID_KEYSTORE_SSL_KEY }} -iv ${{ secrets.ANDROID_KEYSTORE_SSL_IV }} -in pulsebridge.jks.enc -out pulsebridge.jks -d
-      - name: Make gradlew executable
+      - name: Make gradlew executables
         run: chmod +x ./gradlew
       - run: make assemble-release
 
